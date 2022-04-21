@@ -1,0 +1,108 @@
+body {
+    background-color: rgb(112, 112, 206);
+}
+
+/* nav bar */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.nav-ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+
+    background: hsl(0 0% 0% / 0.75);
+    /* hsl (couleur saturation couleur / transparence */
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    .nav-ul {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+    }
+
+}
+
+.nav-ul li a {
+    display: inline-block;
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* menu burger  */
+
+.hamburger {
+    background-color: transparent;
+    border: 0;
+    display: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.hamburger:focus {
+    outline: none;
+}
+
+/* responsive */
+
+@media screen and (max-width: 767px){
+
+    .nav-ul {
+        --gap: 2em;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 10%;
+        /* inset = top right bottom left */
+
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+
+        transform: translateX(100%); 
+        transition: transform 350ms ease-out;
+        /* animation pour le menu burger */
+    }
+
+    .nav-ul[data-visible="true"]{
+        transform: translateX(0%);
+    }
+
+    .nav-ul.show {
+        display: flex;
+    }
+    
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background-color: transparent;
+        background: url('images/icon-hamburger.svg');
+        background-repeat: no-repeat;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2em;
+    }
+
+    .hamburger[aria-expanded="true"]{
+        background-image: url("images/icon-close.svg");
+    }
+
+
+    .logo {
+        width: 80px;
+    }
+}

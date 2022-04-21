@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Navbar</title>
+</head>
+<body>
+
+    <header>
+        <!-- Début de la barre de navigation : la même sur toutes les autres pages -->
+        <nav>
+        <img src="images/logo.svg" alt="logo" class="logo">  
+         
+        <button class="hamburger" id="hamburger" aria-expanded="true">
+            <!-- <img src="images/icon-hamburger.svg" alt=""> -->
+        </button>
+
+          <ul class="nav-ul" id="nav-ul" data-visible="false">
+            <li class="active"><a href="index.html"><span aria-hidden="true">00</span>Accueil</a></li>
+            <li class="active"><a href="propos.html"><span aria-hidden="true">01</span>A Propos</a></li>
+            <li><a href="services.html"><span aria-hidden="true">02</span>Nos Services</a></li>
+            <li><a href="contact.html"><span aria-hidden="true">03</span>Contact</a></li>
+          </ul>
+
+
+        </nav>
+          <!-- Fin de la barre de navigation : la même sur toutes les autres pages -->
+      </header>
+    
+      <script src="script.js"></script>
+</body>
+</html>
